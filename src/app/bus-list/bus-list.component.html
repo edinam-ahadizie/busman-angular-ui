@@ -1,0 +1,27 @@
+<a href="#" id="new-button">New</a>
+<table>
+  <thead>
+    <tr>
+      <th>Bus Number</th>
+      <th>Bus Type</th>
+      <th>Capacity</th>
+      <th>Registration Year</th>
+      <th>Driver Name</th>
+      <th>Maintenance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let busInfo of BusData">
+      <td>{{ busInfo.busNumber }}</td>
+      <td>{{ busInfo.busType }}</td>
+      <td>{{ busInfo.capacity }}</td>
+      <td>{{ busInfo.registrationYear | date: 'shortDate' }}</td>
+      <td>{{ busInfo.driverName }}</td>
+      <td>{{ busInfo.maintenance }}</td>
+      <td>
+        <a href="#" (click)="editRecord(this)">Edit</a>
+        <a href="#" (click)="deleteRecord(this)">Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

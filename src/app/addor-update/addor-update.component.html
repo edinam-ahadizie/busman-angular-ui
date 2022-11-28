@@ -1,0 +1,67 @@
+<div>
+  <h2 *ngIf="!busInfo || busInfo.id === undefined">Add record</h2>
+  <h2 *ngIf="busInfo && busInfo.id !== undefined">Update record (ID: )</h2>
+  <form>
+    <div class="form-group">
+      <label for="bus-number">Bus Number</label>
+      <input
+        type="text"
+        name="bus-number"
+        [(ngModel)]="busInfo.busNumber"
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <label for="bus-type">Bus Type</label>
+      <input
+        type="text"
+        name="bus-type"
+        [(ngModel)]="busInfo.busType"
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <label for="distance-input">Capacity</label>
+      <input
+        type="number"
+        name="bus-capacity"
+        [(ngModel)]="busInfo.capacity"
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <label for="date-input">Registration Year</label>
+      <input
+        type="date"
+        name="date-input"
+        [(ngModel)]="busInfo.date"
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <label for="bus-type">Driver Name</label>
+      <input
+        type="text"
+        name="driver-name"
+        [(ngModel)]="busInfo.driverName"
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <label for="distance-input">Maintenance</label>
+      <input
+        type="number"
+        name="bus-maintenance"
+        [(ngModel)]="busInfo.distanceInMeters"
+        class="form-control"
+      />
+    </div>
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="addOrUpdateBusRecord($event)"
+    >
+      Save
+    </button>
+  </form>
+</div>
